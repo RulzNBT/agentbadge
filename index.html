@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent ID Badge — Free Mint</title>
+  <meta name="description" content="Free soulbound badge for Agent ID holders. You only pay network gas. No promised returns or value.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Agent ID Badge</h1>
+      <p class="subtitle">A free, soulbound on-chain badge for Agent ID holders.</p>
+    </header>
+
+    <section class="card" aria-label="Key facts">
+      <ul class="facts">
+        <li>Free mint — you only pay network gas</li>
+        <li>No promised returns or value</li>
+        <li>Soulbound — cannot be transferred or sold</li>
+        <li>One badge per Agent ID holder</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-label="Mint status">
+      <div class="stats">
+        <div class="stat">
+          <span class="label">Minted</span>
+          <span class="value" id="stat-minted">—</span>
+        </div>
+        <div class="stat">
+          <span class="label">Cap</span>
+          <span class="value" id="stat-cap">—</span>
+        </div>
+        <div class="stat">
+          <span class="label">Connection</span>
+          <span class="value" id="stat-connection">Not connected</span>
+        </div>
+      </div>
+
+      <p id="handle-line" class="small">Connect your wallet to check your Agent ID.</p>
+
+      <button id="btn-connect" type="button">Connect Wallet</button>
+      <button id="btn-switch-chain" type="button" class="secondary" hidden>Switch to BSC Testnet</button>
+      <button id="btn-mint" type="button" disabled>Mint Badge</button>
+
+      <div id="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="card" id="badge-section" hidden>
+      <h2>Your Badge</h2>
+      <div id="badge-display"></div>
+    </section>
+
+    <footer>
+      <p>How to get an Agent ID: claim one for free in the Binance app — Wallet &gt; Agent ID. This site never asks for your seed phrase or private key. Your wallet asks you to confirm every transaction; this site cannot move funds on its own.</p>
+      <p class="small">Contract: <span id="contract-address">—</span></p>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
